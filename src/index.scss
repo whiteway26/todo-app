@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  font-family: "Roboto", -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+.todo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 530px;
+  box-shadow: 1px 1px 10px #cfcfcf;
+  border-radius: 10px;
+  border: 1px solid #f1f1f1;
+
+  &__sidebar {
+    background-color: #f4f6f8;
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid #f1f1f1;
+    padding: 60px 20px;
+  }
+}

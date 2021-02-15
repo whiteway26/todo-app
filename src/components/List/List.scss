@@ -1,0 +1,51 @@
+.list {
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 3px;
+    cursor: pointer;
+
+    &:first-child {
+      margin-bottom: 30px;
+    }
+
+    &.active {
+      background: #ffffff;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+    }
+
+    i {
+      display: inline-flex;
+      margin-right: 8px;
+      svg {
+        fill: #7c7c7c;
+      }
+    }
+
+    .badge {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: relative;
+      left: 4px;
+
+      &_green {
+        background-color: #42b883;
+      }
+      &_blue {
+        background-color: #64c4ed;
+      }
+      &_pink {
+        background-color: #ffbbcc;
+      }
+      &_lightGreen {
+        background-color: #b6e6bd;
+      }
+      &_grey {
+        background-color: #c9d1d3;
+      }
+    }
+  }
+}
