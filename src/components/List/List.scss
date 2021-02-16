@@ -1,9 +1,11 @@
 .list {
+  $self: &;
+
   margin-bottom: 35px;
 
   &__add-button {
     opacity: 0.4;
-    transition: 0.3s;
+    transition: 0.15s;
 
     &:hover {
       opacity: 0.9;
@@ -16,6 +18,26 @@
     padding: 10px 12px;
     margin-bottom: 3px;
     cursor: pointer;
+
+    &:hover #{$self}__remove-icon {
+      opacity: 0.2;
+    }
+
+    #{$self}__remove-icon {
+      opacity: 0;
+      transition: opacity 0.15s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    span {
+      flex: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
     &.active {
       background: #ffffff;
@@ -31,9 +53,6 @@
     i {
       display: inline-flex;
       margin-right: 8px;
-      svg {
-        fill: #7c7c7c;
-      }
     }
   }
 }
