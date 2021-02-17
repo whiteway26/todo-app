@@ -1,4 +1,8 @@
 .tasks {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
   &__title {
     font-family: Montserrat;
     font-style: normal;
@@ -46,6 +50,42 @@
       align-items: center;
       margin-bottom: 20px;
 
+      &:hover &-actions {
+        opacity: 1;
+      }
+
+      &-actions {
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background-color: lighten(#f4f6f8, 2%);
+          border-radius: 6px;
+          margin-left: 6px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: darken(#f4f6f8, 2%);
+
+            svg {
+              opacity: 0.8;
+            }
+          }
+
+          svg {
+            width: 11px;
+            height: 11px;
+            opacity: 0.4;
+          }
+        }
+      }
+
       .checkbox {
         input {
           display: none;
@@ -92,7 +132,7 @@
         }
       }
 
-      input {
+      p {
         margin-left: 15px;
         border: 0;
         width: 100%;

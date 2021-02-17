@@ -6,6 +6,7 @@ import { List, Badge } from "../../components";
 import addSVG from "../../assets/icons/add.svg";
 import closeSVG from "../../assets/icons/close.svg";
 import "./AddList.scss";
+import Loader from "../Loader";
 
 const AddList = ({ colors, onAdd }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -31,8 +32,8 @@ const AddList = ({ colors, onAdd }) => {
         colorId: selectedColor,
       })
       .then(({ data }) => {
-        const color = colors.find((color) => color.id === selectedColor).name;
-        const listObj = { ...data, color: { name: color } };
+        const color = colors.find((color) => color.id === selectedColor);
+        const listObj = { ...data, color, tasks: [] };
         onAdd(listObj);
         onClose();
       })
@@ -89,7 +90,7 @@ const AddList = ({ colors, onAdd }) => {
             ))}
           </div>
           <button onClick={addListItem} className="btn">
-            {isLoading ? "Добавление..." : "Добавить"}
+            {isLoading ? <Loader /> : "Добавить"}
           </button>
         </div>
       )}
